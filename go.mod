@@ -1,4 +1,4 @@
-module github.com/ipfs/go-ds-badger2
+module github.com/feld/go-ds-badger2
 
 require (
 	github.com/dgraph-io/badger/v2 v2.2007.3

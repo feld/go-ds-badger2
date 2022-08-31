@@ -132,7 +132,7 @@ func (opt Options) WithTTL(ttl time.Duration) Options {
 
 func init() {
 	DefaultOptions = Options{
-		GcDiscardRatio: 0.2,
+		GcDiscardRatio: 0.7,
 		GcInterval:     15 * time.Minute,
 		GcSleep:        10 * time.Second,
 		Options:        badger.DefaultOptions(""),
@@ -492,6 +492,7 @@ func (d *Datastore) CollectGarbage(ctx context.Context) (err error) {
 }
 
 func (d *Datastore) gcOnce() error {
+        log.Error("Running GC on one vlog file.")
 	d.closeLk.RLock()
 	defer d.closeLk.RUnlock()
 	if d.closed {
