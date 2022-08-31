@@ -132,7 +132,7 @@ func (opt Options) WithTTL(ttl time.Duration) Options {
 
 func init() {
 	DefaultOptions = Options{
-		GcDiscardRatio: 0.7,
+		GcDiscardRatio: 0.01,
 		GcInterval:     15 * time.Minute,
 		GcSleep:        10 * time.Second,
 		Options:        badger.DefaultOptions(""),
