@@ -492,7 +492,6 @@ func (d *Datastore) CollectGarbage(ctx context.Context) (err error) {
 }
 
 func (d *Datastore) gcOnce() error {
-        log.Error("Running GC on one vlog file.")
 	d.closeLk.RLock()
 	defer d.closeLk.RUnlock()
 	if d.closed {
